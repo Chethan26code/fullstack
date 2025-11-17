@@ -37,6 +37,7 @@ export default function SignUpPage() {
     } finally {
       setIsLoading(false);
     }
+
   };
 
   const handleGoogleSignUp = async () => {
@@ -52,6 +53,7 @@ export default function SignUpPage() {
     } finally {
       setIsLoading(false);
     }
+
   };
 
   return (
