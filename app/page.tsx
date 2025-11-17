@@ -3,57 +3,92 @@ import Link from "next/link";
 
 export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center px-4">
-      <div className="w-full max-w-2xl rounded-3xl border border-slate-800 bg-slate-900/70 backdrop-blur-xl shadow-2xl p-8 md:p-10">
-        <div className="flex flex-col gap-6 md:gap-8">
-          <div>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-indigo-400 mb-3">
-              MicroCircle Finance
-            </p>
-            <h1 className="text-3xl md:text-4xl font-semibold text-white mb-3">
-              Micro-communities,{" "}
-              <span className="text-indigo-400">
-                stress-free group finance.
-              </span>
+    <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 px-4">
+      
+      {/* Floating blurred lights */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 -left-24 w-80 h-80 bg-indigo-600/20 blur-3xl rounded-full opacity-60" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full opacity-40" />
+      </div>
+
+      <div className="relative z-10 w-full max-w-3xl">
+        {/* Card */}
+        <div className="rounded-3xl border border-slate-800/80 bg-slate-950/70 backdrop-blur-xl shadow-[0_18px_80px_rgba(0,0,0,0.7)] px-8 py-12 flex flex-col gap-8 animate-fadeUp">
+          
+          {/* Header Logo / Badge */}
+          <div className="inline-flex items-center gap-2 self-center rounded-full bg-slate-900/50 px-4 py-1 border border-indigo-500/30 text-[10px] font-medium text-indigo-300 tracking-widest">
+            VibeOS Starter Kit
+          </div>
+
+          {/* Headline */}
+          <div className="text-center space-y-3">
+            <h1 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-indigo-100 to-indigo-300 drop-shadow-xl">
+              Build Fast. Launch Faster.
             </h1>
-            <p className="text-sm md:text-base text-slate-400 max-w-xl">
-              Automate group expense tracking, shared budgets, payment
-              management, and let an agentic AI deliver recaps, payment guides,
-              and smart plans for your community.
+            <p className="text-sm md:text-base text-slate-400 max-w-lg mx-auto">
+              Auth-enabled starter with Firebase + Next.js + Tailwind.
+              Designed for modern AI experiences and instant launches.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
+          {/* Actions */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/sign-in"
-              className="inline-flex items-center justify-center rounded-xl bg-indigo-500 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-indigo-500/30 hover:bg-indigo-400 transition"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-500 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-indigo-500/30 hover:bg-indigo-400 transition"
             >
-              Sign in
+              🚀 Get Started
             </Link>
+
             <Link
               href="/sign-up"
-              className="inline-flex items-center justify-center rounded-xl border border-slate-700 bg-slate-900/60 px-5 py-2.5 text-sm font-medium text-slate-100 hover:bg-slate-800/80 transition"
+              className="inline-flex items-center justify-center rounded-xl border border-slate-700 bg-slate-900/70 px-6 py-3 text-sm font-medium text-slate-100 hover:bg-slate-800/80 transition"
             >
-              Create account
+              Create Account
             </Link>
           </div>
 
-          <div className="mt-2 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-400">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p className="font-medium text-slate-200 mb-1">For groups</p>
-              <p>Flatmates, travel squads, clubs, side projects.</p>
+          {/* Features */}
+          <div className="grid gap-4 text-xs text-slate-400">
+            <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 hover:border-indigo-500/40 transition">
+              <p className="font-medium text-indigo-300 mb-1">⚡ Modern Stack</p>
+              <p>Next.js App Router + TypeScript + Tailwind CSS</p>
             </div>
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p className="font-medium text-slate-200 mb-1">AI assistance</p>
-              <p>Spend recaps, budget coach, payment guides.</p>
+
+            <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 hover:border-indigo-500/40 transition">
+              <p className="font-medium text-indigo-300 mb-1">🔐 Firebase Auth</p>
+              <p>Email & Password + Google Sign-In included</p>
             </div>
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p className="font-medium text-slate-200 mb-1">Peace of mind</p>
-              <p>No more “who owes what?” conflict drama.</p>
+
+            <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 hover:border-indigo-500/40 transition">
+              <p className="font-medium text-indigo-300 mb-1">🧠 AI-Ready</p>
+              <p>Perfect base to add voice, chat & LLM features</p>
             </div>
           </div>
         </div>
+
+        {/* Footer small badge */}
+        <p className="mt-6 text-center text-[10px] text-slate-600">
+          © 2025 VibeOS — All Rights Reserved.
+        </p>
       </div>
+
+      {/* Smooth fade-up animation */}
+      <style>{`
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(15px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeUp {
+          animation: fadeUp 0.8s ease-out forwards;
+        }
+      `}</style>
     </main>
   );
 }
