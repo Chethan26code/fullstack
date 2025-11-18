@@ -3,8 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MicroCircle Finance",
-  description: "Group expense tracking & AI-powered budget guidance",
+  title: "Mood Buddy",
+  description: "It Will Help You Out",
 };
 
 export default function RootLayout({
